@@ -37,13 +37,14 @@ object ReflectionBasics {
       if (n == 0) '{ EmptyTuple } 
       else '{ $value *: ${ buildTupleSimple(n - 1) } }
 
-    def buildTupleExpr(tpe: Type[? <: AnyKind]): Expr[Tuple] = 
+    def buildTupleExpr(tpe: Type[? <: AnyKind]): Expr[Tuple] =
       tpe match {
-        case '[A *: rt] => 
-          '{ $value *: ${ buildTupleExpr(TypeRepr.of[rt].asType) } }
-        case _ => '{ EmptyTuple }
+        case '[A *: rt] =>
+          '{ $value *: ${ buildTupleExpr(TypeRepr.of[rt].asType).asExprOf[rt] } }
+        case _ =>
+          '{ EmptyTuple }
       }
-
+    
     inline def buildTupleComplicated(n: Int): Expr[Tuple] = {
       // defn = package for meta-definitions in Scala
       // 1 - build the type constructor => TupleN
