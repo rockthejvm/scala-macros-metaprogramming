@@ -3,7 +3,7 @@
 
 Powered by [Rock the JVM!](rockthejvm.com)
 
-This repository contains the code we wrote during the Rock the JVM [Scala Macros and Metaprogramming course](https://rockthejvm.com/course/scala-macros-and-metaprogramming). Unless explicitly mentioned, the code in this repository is exactly what was caught on camera.
+This repository contains the code we wrote during the Rock the JVM [Scala Macros and Metaprogramming course](https://rockthejvm.com/courses/scala-macros-and-metaprogramming). Unless explicitly mentioned, the code in this repository is exactly what was caught on camera.
 
 ### Installation
 
